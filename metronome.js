@@ -61,9 +61,8 @@ function toggle() {
     } else {
         if (!audioCtx) {
             setupAudio();
-        } else {
-            start();
         }
+        start();
     }
 }
 
