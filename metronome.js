@@ -39,7 +39,7 @@ function start() {
 
         // Update the progress bar
         const progress = document.getElementById('progress');
-        progress.value = (progress.value + 1) % 5;
+        progress.value = (progress.value + 1) % 4;
     }, interval);
 }
 

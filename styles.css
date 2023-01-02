@@ -58,18 +58,19 @@ nav ul li a:hover {
 /* Style for the progress bar */
 .progress-bar {
     width: 200px;
-    height: 8px;
+    height: 16px;
     background-color: lightgrey;
     border-radius: 4px;
     overflow: hidden;
+    margin: 0 auto;
     margin-top: 16px;
-}
+  }
 
-.progress-bar::-webkit-progress-bar {
+  .progress-bar::-webkit-progress-bar {
     background-color: lightgrey;
-}
+  }
 
-.progress-bar::-webkit-progress-value {
+  .progress-bar::-webkit-progress-value {
     background-color: black;
     border-radius: 4px;
-}
+  }
