@@ -47,6 +47,11 @@ function stop() {
     clearInterval(intervalId);
 }
 
+// Update the tempo value in the UI when the tempo input value changes
+document.getElementById('tempo').addEventListener('input', () => {
+    document.getElementById('tempo-value').innerHTML = document.getElementById('tempo').value;
+});
+
 // Toggle the metronome when the button is clicked
 document.getElementById('toggle').addEventListener('click', () => {
     if (isRunning) {
