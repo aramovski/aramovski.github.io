@@ -36,6 +36,10 @@ function start() {
         setTimeout(() => {
             gainNode.gain.value = 0;
         }, 50);
+
+        // Update the progress bar
+        const progress = document.getElementById('progress');
+        progress.value = (progress.value + 1) % 5;
     }, interval);
 }
 
@@ -44,32 +48,54 @@ function stop() {
     // Stop the metronome
     isRunning = false;
     document.getElementById('toggle').innerHTML = 'Start';
-    // Stop the oscillator and reset the interval between beats
-    oscillator.stop();
     clearInterval(intervalId);
+
+    // Reset the progress bar
+    document.getElementById('progress').value = 0;
 }
 
-// Update the tempo value in the UI when the tempo input value changes
-document.getElementById('tempo').addEventListener('input', () => {
-    document.getElementById('tempo-value').innerHTML = document.getElementById('tempo').value;
-
-    // If the metronome is running, update the interval between beats
-    if (isRunning) {
-        stop();
-        start();
-    }
-});
-
-
-
-// Toggle the metronome when the button is clicked
-document.getElementById('toggle').addEventListener('click', () => {
+// Function for toggling the metronome
+function toggle() {
     if (isRunning) {
         stop();
     } else {
-        if (!audioCtx) {
-            setupAudio();
-        }
         start();
+    }
+}
+
+// Set up the audio context and oscillator when the page loads
+window.addEventListener('load', setupAudio);
+
+// Add event listeners for the tempo input, toggle button, and beat checkboxes
+document.getElementById('tempo').addEventListener('input', () => {
+    document.getElementById('tempo-value').innerHTML = document.getElementById('tempo').value;
+});
+document.getElementById('toggle').addEventListener('click', toggle);
+document.getElementById('beat-1').addEventListener('change', (event) => {
+    if (event.target.checked) {
+        oscillator.frequency.value += 100;
+    } else {
+        oscillator.frequency.value -= 100;
+    }
+});
+document.getElementById('beat-2').addEventListener('change', (event) => {
+    if (event.target.checked) {
+        oscillator.frequency.value += 200;
+    } else {
+        oscillator.frequency.value -= 200;
+    }
+});
+document.getElementById('beat-3').addEventListener('change', (event) => {
+    if (event.target.checked) {
+        oscillator.frequency.value += 300;
+    } else {
+        oscillator.frequency.value -= 300;
+    }
+});
+document.getElementById('beat-4').addEventListener('change', (event) => {
+    if (event.target.checked) {
+        oscillator.frequency.value += 400;
+    } else {
+        oscillator.frequency.value -= 400;
     }
 });
