@@ -5,6 +5,7 @@ let isRunning = false;
 let audioCtx;
 let oscillator;
 let gainNode;
+let intervalId;
 
 // Function for setting up the audio context and oscillator
 function setupAudio() {
@@ -29,7 +30,7 @@ function start() {
     // Start the metronome
     isRunning = true;
     document.getElementById('toggle').innerHTML = 'Stop';
-    setInterval(() => {
+    intervalId = setInterval(() => {
         // Play a beat
         gainNode.gain.value = 1;
         setTimeout(() => {
@@ -43,7 +44,7 @@ function stop() {
     // Stop the metronome
     isRunning = false;
     document.getElementById('toggle').innerHTML = 'Start';
-    clearInterval();
+    clearInterval(intervalId);
 }
 
 // Toggle the metronome when the button is clicked
