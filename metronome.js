@@ -44,6 +44,8 @@ function stop() {
     // Stop the metronome
     isRunning = false;
     document.getElementById('toggle').innerHTML = 'Start';
+    // Stop the oscillator and reset the interval between beats
+    oscillator.stop();
     clearInterval(intervalId);
 }
 
