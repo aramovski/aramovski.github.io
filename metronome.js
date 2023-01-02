@@ -69,33 +69,9 @@ function toggle() {
 // Add event listeners for the tempo input, toggle button, and beat checkboxes
 document.getElementById('tempo').addEventListener('input', () => {
     document.getElementById('tempo-value').innerHTML = document.getElementById('tempo').value;
+    // Reset the interval timer with the new interval
+    clearInterval(intervalId);
+    start();
 });
+
 document.getElementById('toggle').addEventListener('click', toggle);
-document.getElementById('beat-1').addEventListener('change', (event) => {
-    if (event.target.checked) {
-        oscillator.frequency.value += 100;
-    } else {
-        oscillator.frequency.value -= 100;
-    }
-});
-document.getElementById('beat-2').addEventListener('change', (event) => {
-    if (event.target.checked) {
-        oscillator.frequency.value += 200;
-    } else {
-        oscillator.frequency.value -= 200;
-    }
-});
-document.getElementById('beat-3').addEventListener('change', (event) => {
-    if (event.target.checked) {
-        oscillator.frequency.value += 300;
-    } else {
-        oscillator.frequency.value -= 300;
-    }
-});
-document.getElementById('beat-4').addEventListener('change', (event) => {
-    if (event.target.checked) {
-        oscillator.frequency.value += 400;
-    } else {
-        oscillator.frequency.value -= 400;
-    }
-});
