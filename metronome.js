@@ -59,12 +59,13 @@ function toggle() {
     if (isRunning) {
         stop();
     } else {
-        start();
+        if (!audioCtx) {
+            setupAudio();
+        } else {
+            start();
+        }
     }
 }
-
-// Set up the audio context and oscillator when the page loads
-window.addEventListener('load', setupAudio);
 
 // Add event listeners for the tempo input, toggle button, and beat checkboxes
 document.getElementById('tempo').addEventListener('input', () => {
