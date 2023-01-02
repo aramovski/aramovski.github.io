@@ -83,13 +83,3 @@ nav ul li a:hover {
     text-align: center;
     width: 25%;
 }
-
-.label::before {
-    content: "";
-    position: absolute;
-    top: -8px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-top: 1px solid black;
-    width: 50%;
-}
