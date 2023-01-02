@@ -1,17 +1,34 @@
-
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="this is a very simple website">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
 
-    <title>Testpage</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="this is a very simple website">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
+  <title>Practice Hub</title>
+  <script src="script.js"></script>
+</head>
 
-    <script src="script.js"></script>
-  </head>
-  <body>
-    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
-  </body>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showContent('content1')">Metronome</a></li>
+      <li><a href="#" onclick="showContent('content2')">Resources</a></li>
+    </ul>
+  </nav>
+
+  <div id="content1" style="display: block;">
+    <!-- Content for Tab 1 goes here -->
+    Metronome...
+  </div>
+
+  <div id="content2" style="display: none;">
+    <!-- Content for Tab 2 goes here -->
+    Resources...
+  </div>
+
+</body>
+
 </html>
