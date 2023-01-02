@@ -22,7 +22,14 @@
 
   <div id="content1" class="content" style="display: block;">
     <!-- Content for Tab 1 goes here -->
-    Metronome...
+    Metronome
+
+    <div class="metronome">
+      <!-- Range input for selecting the tempo -->
+      <input type="range" min="40" max="220" step="1" value="80" id="tempo">
+      <!-- Button for starting and stopping the metronome -->
+      <button id="toggle">Start</button>
+    </div>
   </div>
 
   <div id="content2" class="content" style="display: none;">
